@@ -26,37 +26,37 @@ Basic unit tests
 
 API Endpoints
 Musicians
-GET /musicians — List all musicians
+GET /musicians: List all musicians
 
-GET /musicians/:id — Get musician by ID
+GET /musicians/:id Get musician by ID
 
-POST /musicians — Create musician
+POST /musicians: Create musician
 
-PUT /musicians/:id — Update musician
+PUT /musicians/:id Update musician
 
-DELETE /musicians/:id — Delete musician
+DELETE /musicians/:id Delete musician
 
 
 Practice Sessions
-GET /practice-sessions — List all sessions
+GET /practice-sessions: List all sessions
 
-GET /practice-sessions/:id — Get session by ID
+GET /practice-sessions/:id Get session by ID
 
-POST /practice-sessions — Create session
+POST /practice-sessions: Create session
 
-PUT /practice-sessions/:id — Update session
+PUT /practice-sessions/:id Update session
 
-DELETE /practice-sessions/:id — Delete session
+DELETE /practice-sessions/:id Delete session
 
 
 
 Rehearsals
-GET /rehearsals — List all rehearsals
+GET /rehearsals: List all rehearsals
 
-GET /rehearsals/:id — Get rehearsal by ID
+GET /rehearsals/:id Get rehearsal by ID
 
-POST /rehearsals — Create rehearsal
+POST /rehearsals: Create rehearsal
 
-PUT /rehearsals/:id — Update rehearsal
+PUT /rehearsals/:id Update rehearsal
 
-DELETE /rehearsals/:id — Delete rehearsal
+DELETE /rehearsals/:id Delete rehearsal
