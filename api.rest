@@ -1,0 +1,91 @@
+############################################################
+# LOCAL TESTING — AUTH
+############################################################
+
+### REGISTER
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "nick@example.com",
+  "password": "test123"
+}
+
+### LOGIN
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "nick@example.com",
+  "password": "test123"
+}
+
+############################################################
+# SET TOKEN HERE AFTER LOGIN
+############################################################
+@token = YOUR_JWT_TOKEN_HERE
+
+
+############################################################
+# MUSICIANS
+############################################################
+
+### GET all musicians
+GET http://localhost:3000/musicians
+Authorization: Bearer {{token}}
+
+### CREATE musician
+POST http://localhost:3000/musicians
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Nick Test",
+  "instrument": "Trumpet",
+  "skillLevel": "Intermediate",
+  "yearsExperience": 4
+}
+
+### GET one musician
+GET http://localhost:3000/musicians/1
+Authorization: Bearer {{token}}
+
+
+############################################################
+# PRACTICE SESSIONS
+############################################################
+
+### GET all sessions
+GET http://localhost:3000/practice-sessions
+Authorization: Bearer {{token}}
+
+### CREATE session
+POST http://localhost:3000/practice-sessions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "duration": 30,
+  "focusArea": "Scales",
+  "date": "2026-04-10",
+  "musicianId": 1
+}
+
+
+############################################################
+# REHEARSALS
+############################################################
+
+### GET all rehearsals
+GET http://localhost:3000/rehearsals
+
+### CREATE rehearsal
+POST http://localhost:3000/rehearsals
+Content-Type: application/json
+
+{
+  "date": "2026-04-20",
+  "location": "Band Hall",
+  "conductor": "Mr. Smith",
+  "pieces": "Holst Suite"
+}
