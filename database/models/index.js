@@ -1,9 +1,11 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const path = require("path");
 
+// Initialize Sequelize with SQLite
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: path.join(__dirname, "..", "ensemble.db")
+  storage: path.join(__dirname, "..", "ensemble.db"),
+  logging: false
 });
 
 const db = {};
@@ -11,7 +13,8 @@ const db = {};
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-// Import models
+// Import ALL models (User was missing before)
+db.User = require("./User")(sequelize, DataTypes);
 db.Musician = require("./Musician")(sequelize, DataTypes);
 db.PracticeSession = require("./PracticeSession")(sequelize, DataTypes);
 db.Rehearsal = require("./Rehearsal")(sequelize, DataTypes);
