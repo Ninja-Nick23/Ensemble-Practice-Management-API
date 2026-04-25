@@ -1,62 +1,156 @@
-Ensemble-Practice-Management-API
+A fully functional RESTful API for managing musicians, practice sessions, and rehearsals, featuring authentication, role‑based access control, and complete CRUD operations.
 
-A RESTful API for managing musicians, practice sessions, and rehearsals.
+Features
+JWT user authentication
 
+Role‑based authorization (admin‑only delete)
 
-3 resource types (Musicians, Practice Sessions, Rehearsals)
+Three core resource types:
 
-Proper database relationships and constraints
+Musicians
+
+Practice Sessions
+
+Rehearsals
 
 Full CRUD operations for all resources
 
-RESTful routing and correct status codes
+RESTful routing with proper status codes
 
-Logging middleware, JSON parsing, and error handling middleware
+Sequelize ORM + SQLite database
 
-Basic Jest + Supertest unit tests
+Logging middleware
 
-Database setup + seed scripts
+Centralized error handling
 
-GitHub repository with full source code
+Seed script for sample data
 
-README documentation
+Jest + Supertest tests for all major routes
 
-Basic unit tests
+Authentication
+Register
+Code
+POST /auth/register
+Body:
 
+json
+{
+  "email": "example@example.com",
+  "password": "yourpassword"
+}
+Login
+Code
+POST /auth/login
+Returns:
 
+token (JWT)
+
+user object
+
+Use the token in protected routes:
+
+Code
+Authorization: Bearer <token>
 API Endpoints
 Musicians
-GET /musicians: List all musicians
+All musician routes require authentication.
 
-GET /musicians/:id Get musician by ID
+GET /musicians
+List all musicians.
 
-POST /musicians: Create musician
+GET /musicians/:id
+Get musician by ID.
 
-PUT /musicians/:id Update musician
+POST /musicians
+Create a musician.
 
-DELETE /musicians/:id Delete musician
+PUT /musicians/:id
+Update a musician.
 
+DELETE /musicians/:id
+Delete a musician.
+Admin‑only.
 
 Practice Sessions
-GET /practice-sessions: List all sessions
+All practice session routes require authentication.
 
-GET /practice-sessions/:id Get session by ID
+GET /practice-sessions
+List all practice sessions.
 
-POST /practice-sessions: Create session
+GET /practice-sessions/:id
+Get session by ID.
 
-PUT /practice-sessions/:id Update session
+POST /practice-sessions
+Create a session.
+Requires:
 
-DELETE /practice-sessions/:id Delete session
+duration
 
+focusArea
 
+date
+
+musicianId
+
+PUT /practice-sessions/:id
+Update a session.
+
+DELETE /practice-sessions/:id
+Delete a session.
 
 Rehearsals
-GET /rehearsals: List all rehearsals
+Rehearsal routes are public.
 
-GET /rehearsals/:id Get rehearsal by ID
+GET /rehearsals
+List all rehearsals.
 
-POST /rehearsals: Create rehearsal
+GET /rehearsals/:id
+Get rehearsal by ID.
 
-PUT /rehearsals/:id Update rehearsal
+POST /rehearsals
+Create rehearsal.
 
-DELETE /rehearsals/:id Delete rehearsal
+PUT /rehearsals/:id
+Update rehearsal.
+
+DELETE /rehearsals/:id
+Delete rehearsal.
+
+Database & Models
+SQLite database via Sequelize
+
+Models:
+
+User
+
+Musician
+
+PracticeSession
+
+Rehearsal
+
+RehearsalAttendance
+
+Includes seed script for sample data
+
+Testing
+Run all Jest + Supertest tests:
+
+Code
+npm test
+Covers:
+
+Musicians
+
+Practice Sessions
+
+Rehearsals
+
+Authentication flow
+
+Project Status
+✔ Fully functional
+✔ All endpoints tested
+✔ Authentication working
+✔ No missing column errors
+✔ Ready for frontend integration
