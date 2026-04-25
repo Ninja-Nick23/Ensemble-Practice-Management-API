@@ -149,8 +149,8 @@ Rehearsals
 Authentication flow
 
 Project Status
-✔ Fully functional
-✔ All endpoints tested
-✔ Authentication working
-✔ No missing column errors
-✔ Ready for frontend integration
+  Fully functional
+  All endpoints tested
+  Authentication working
+  No missing column errors
+  Ready for frontend integration

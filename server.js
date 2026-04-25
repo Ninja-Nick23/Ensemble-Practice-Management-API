@@ -8,7 +8,7 @@ const practiceSessionsRouter = require("./routes/practiceSessions");
 const rehearsalsRouter = require("./routes/rehearsals");
 const authRouter = require("./routes/auth");
 
-const db = require("./database/models");   // ⭐ Load Sequelize models
+const db = require("./database/models");   //  Load Sequelize models
 
 const app = express();
 
@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(logger);
 
-// ⭐ Sync database on server start (NO force, NO alter)
+// Sync database on server start (NO force, NO alter)
 db.sequelize.sync()
   .then(() => console.log("Database synced on server start"))
   .catch(err => console.error("Database sync error:", err));

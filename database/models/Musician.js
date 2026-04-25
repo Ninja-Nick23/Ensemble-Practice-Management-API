@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     }
-    // ❌ userId removed because the database does not have this column
+    //  userId removed because the database does not have this column
   });
 
   Musician.associate = models => {
-    // ❌ Remove this line because it depends on userId
+    //  Remove this line because it depends on userId
     // Musician.belongsTo(models.User, { foreignKey: "userId" });
 
     // Keep this — it’s valid
