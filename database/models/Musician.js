@@ -16,15 +16,15 @@ module.exports = (sequelize, DataTypes) => {
     yearsExperience: {
       type: DataTypes.INTEGER,
       allowNull: false
-    },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     }
+    // ❌ userId removed because the database does not have this column
   });
 
   Musician.associate = models => {
-    Musician.belongsTo(models.User, { foreignKey: "userId" });
+    // ❌ Remove this line because it depends on userId
+    // Musician.belongsTo(models.User, { foreignKey: "userId" });
+
+    // Keep this — it’s valid
     Musician.hasMany(models.PracticeSession, { foreignKey: "musicianId" });
   };
 
